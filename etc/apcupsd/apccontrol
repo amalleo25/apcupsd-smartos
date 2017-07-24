@@ -89,8 +89,6 @@ case "$1" in
    ;;
    doshutdown)
       printf "Beginning Shutdown Sequence" | wall -a
-      /data/scripts/smartos/pushover/killpower-alert.sh > /dev/null 2>&1
-      /data/scripts/smartos/stop-zones.sh > /dev/null 2>&1
       ${SHUTDOWN} -y -g0 -i5 "apcupsd initiated shutdown"
    ;;
    annoyme)
