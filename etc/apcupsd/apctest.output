@@ -1,0 +1,10 @@
+
+
+2017-02-09 04:10:54 apctest 3.14.14 (31 May 2016) sun
+Checking configuration ...
+sharenet.type = Network & ShareUPS Disabled
+cable.type = Ethernet Link
+mode.type = NETWORK UPS Driver
+Setting up the port ...
+Doing prep_device() ...
+Testing not yet implemented for this UPSTYPE.
