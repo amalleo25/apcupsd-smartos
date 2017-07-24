@@ -1,15 +1,16 @@
 #!/bin/bash
 
-#PREFIX=/opt/local
-PREFIX=/tmp/test1
+PREFIX=/opt/local
 
-mkdir -p $PREFIX/sbin
-mkdir -p $PREFIX/etc
-mkdir -p $PREFIX/man/man5
-mkdir -p $PREFIX/man/man8
+mkdir -p /opt/custom/smf $PREFIX/lib/svc/method $PREFIX/sbin \
+$PREFIX/etc $PREFIX/man/man5 $PREFIX/man/man8  2>/dev/null
 
 echo "Copying files..."
 
+cp custom/smf/apcupsd.xml /opt/custom/smf/
+cp custom/smf/smartos-setup.xml /opt/custom/smf/
+cp lib/svc/method/apcupsd.sh $PREFIX/lib/svc/method/
+cp lib/svc/method/smartos-setup.sh $PREFIX/lib/svc/method/
 cp sbin/apcupsd $PREFIX/sbin/
 cp sbin/apctest $PREFIX/sbin/
 cp sbin/apcaccess $PREFIX/sbin/

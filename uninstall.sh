@@ -1,10 +1,13 @@
 #!/bin/bash
 
-#PREFIX=/opt/local
-PREFIX=/tmp/test1
+PREFIX=/opt/local
 
 echo "Removing files..."
 
+rm opt/custom/smf/apcupsd.xml
+rm opt/custom/smf/smartos-setup.xml
+rm $PREFIX/lib/svc/method/apcupsd.sh
+rm $PREFIX/lib/svc/method/smartos-setup.sh
 rm $PREFIX/sbin/apcupsd
 rm $PREFIX/sbin/apctest
 rm $PREFIX/sbin/apcaccess

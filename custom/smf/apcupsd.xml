@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
+<service_bundle type="manifest" name="apcupsd:apcupsd">
+    <service name="device/apcupsd" type="service" version="1">
+        <create_default_instance enabled="false"/>
+        <single_instance/>
+        <dependency name="loopback-network" grouping="require_all" restart_on="error" type="service">
+            <service_fmri value="svc:/network/loopback"/>
+        </dependency>
+        <dependency name="physical-network" grouping="require_all" restart_on="error" type="service">
+            <service_fmri value="svc:/network/physical"/>
+        </dependency>
+        <dependency name="filesystem-local" grouping="require_all" restart_on="none" type="service">
+            <service_fmri value="svc:/system/filesystem/local:default"/>
+        </dependency>
+        <dependency name="filesystem-smartos" grouping="require_all" restart_on="none" type="service">
+            <service_fmri value="svc:/system/filesystem/smartdc:default"/>
+        </dependency>
+        <method_context>
+            <method_credential user="root" group="root"/>
+        </method_context>
+        <exec_method type="method" name="start" exec="/opt/local/lib/svc/method/apcupsd.sh %m" timeout_seconds="60"/>
+        <exec_method type="method" name="stop" exec="/opt/local/lib/svc/method/apcupsd.sh %m" timeout_seconds="60"/>
+        <property_group name="startd" type="framework">
+            <propval name="config_file" type="astring" value="/opt/local/etc/apcupsd/apcupsd.conf"/>
+        </property_group>
+        <stability value="Unstable"/>
+        <template>
+            <common_name>
+                <loctext xml:lang="C">
+                    APC UPS Monitoring Daemon
+                </loctext>
+            </common_name>
+            <documentation>
+                <manpage title="apcupsd" section="8" manpath="/opt/local/man" />
+                <manpage title="apcaccess" section="8" manpath="/opt/local/man" />
+                <manpage title="apctest" section="8" manpath="/opt/local/man" />
+                <doc_link name="online manual" uri="http://www.apcupsd.org/manual/manual.html" />
+            </documentation>
+        </template>
+    </service>
+</service_bundle>
