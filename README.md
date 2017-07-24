@@ -10,15 +10,15 @@ http://www.apcupsd.org/
 
 Configured with the following options:
 
-./configure --prefix=/opt/local --sbindir=$PREFIX/sbin --sysconfdir=$PREFIX/etc/apcupsd \
---mandir=$PREFIX/man --with-log-dir=/var/log --without-lock-dir --with-pwrfail-dir=$PREFIX/etc/apcupsd \
+./configure --prefix=/opt/local --sbindir=/opt/local/sbin --sysconfdir=/opt/local/etc/apcupsd \
+--mandir=/opt/local/man --with-log-dir=/var/log --without-lock-dir --with-pwrfail-dir=/opt/local/etc/apcupsd \
 --disable-cgi --disable-apcsmart --disable-dumb --disable-pcnet --disable-modbus --without-cgi-bin \ 
 --with-nisip=127.0.0.1 --with-upscable=ether --with-upstype=net
 
 ##Installation
-Unzip and copy to global zone
+Copy to global zone
 ```
-cd apcupsd-smartos
+cd apcupsd-smartos-master
 ./install.sh
 ```
 Edit apcupsd.conf and change DEVICE to apcupsd master (e.g., DEVICE 192.168.1.1:3551)
