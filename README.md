@@ -15,7 +15,7 @@ Configured with the following options:
 --disable-cgi --disable-apcsmart --disable-dumb --disable-pcnet --disable-modbus --without-cgi-bin \ 
 --with-nisip=127.0.0.1 --with-upscable=ether --with-upstype=net
 
-##Installation
+## Installation
 Copy to global zone
 ```
 cd apcupsd-smartos-master
