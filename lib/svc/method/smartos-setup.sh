@@ -12,7 +12,6 @@ case "$1" in
     #### Insert code to execute on startup here.
     #hostname "smartos01" && hostname > /etc/nodename
     svcadm enable apcupsd
-    dladm modify-aggr -P L3,L4 aggr0
     ;;
 
 'stop')
