@@ -9,9 +9,9 @@ $PREFIX/etc $PREFIX/man/man5 $PREFIX/man/man8  2>/dev/null
 echo "Copying files..."
 
 cp custom/smf/apcupsd.xml $SMF_PREFIX
-cp custom/smf/smartos-setup.xml $SMF_PREFIX
+cp -n custom/smf/smartos-setup.xml $SMF_PREFIX
 cp lib/svc/method/apcupsd.sh $PREFIX/lib/svc/method/
-cp lib/svc/method/smartos-setup.sh $PREFIX/lib/svc/method/
+cp -n lib/svc/method/smartos-setup.sh $PREFIX/lib/svc/method/
 cp sbin/apcupsd $PREFIX/sbin/
 cp sbin/apctest $PREFIX/sbin/
 cp sbin/apcaccess $PREFIX/sbin/
