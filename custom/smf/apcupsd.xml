@@ -4,23 +4,17 @@
     <service name="device/apcupsd" type="service" version="1">
         <create_default_instance enabled="false"/>
         <single_instance/>
-        <dependency name="loopback-network" grouping="require_all" restart_on="error" type="service">
-            <service_fmri value="svc:/network/loopback"/>
-        </dependency>
         <dependency name="physical-network" grouping="require_all" restart_on="error" type="service">
             <service_fmri value="svc:/network/physical"/>
         </dependency>
         <dependency name="filesystem-local" grouping="require_all" restart_on="none" type="service">
             <service_fmri value="svc:/system/filesystem/local:default"/>
         </dependency>
-        <dependency name="filesystem-smartos" grouping="require_all" restart_on="none" type="service">
-            <service_fmri value="svc:/system/filesystem/smartdc:default"/>
-        </dependency>
         <method_context>
-            <method_credential user="root" group="root"/>
+            <method_credential user="root" group="bin"/>
         </method_context>
         <exec_method type="method" name="start" exec="/opt/local/lib/svc/method/apcupsd.sh %m" timeout_seconds="60"/>
-        <exec_method type="method" name="stop" exec="/opt/local/lib/svc/method/apcupsd.sh %m" timeout_seconds="60"/>
+        <exec_method type="method" name="stop" exec=":kill" timeout_seconds="60"/>
         <property_group name="startd" type="framework">
             <propval name="config_file" type="astring" value="/opt/local/etc/apcupsd/apcupsd.conf"/>
         </property_group>
