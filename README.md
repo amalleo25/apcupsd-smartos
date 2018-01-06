@@ -16,7 +16,7 @@ Configured with the following options:
 --with-nisip=127.0.0.1 --with-upscable=ether --with-upstype=net
 
 ## Installation
-Copy to global zone
+Copy repo to global zone with scp or rsync
 ```
 cd apcupsd-smartos-master
 ./install.sh
