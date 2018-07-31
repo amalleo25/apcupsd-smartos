@@ -4,8 +4,11 @@
     <service name="device/apcupsd" type="service" version="1">
         <create_default_instance enabled="false"/>
         <single_instance/>
-        <dependency name="physical-network" grouping="require_all" restart_on="error" type="service">
+        <dependency name="network-physical" grouping="require_all" restart_on="error" type="service">
             <service_fmri value="svc:/network/physical"/>
+        </dependency>
+        <dependency name="network-loopback" grouping="require_all" restart_on="error" type="service">
+            <service_fmri value="svc:/network/loopback"/>
         </dependency>
         <dependency name="filesystem-local" grouping="require_all" restart_on="none" type="service">
             <service_fmri value="svc:/system/filesystem/local:default"/>
