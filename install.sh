@@ -23,4 +23,6 @@ cp man/man8/apccontrol.8 $PREFIX/man/man8/
 cp man/man8/apctest.8 $PREFIX/man/man8/
 cp man/man8/apcupsd.8 $PREFIX/man/man8/
 
+svccfg import /opt/custom/smf/apcupsd.xml
+
 echo "Install complete"
