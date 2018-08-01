@@ -9,12 +9,12 @@ At the time of this write up, 3.14.14 is the latest version of apcupsd.
 http://www.apcupsd.org/
 
 Configured with the following options:
-
+```
 ./configure --prefix=/opt/local --sbindir=/opt/local/sbin --sysconfdir=/opt/local/etc/apcupsd \
 --mandir=/opt/local/man --with-log-dir=/var/log --without-lock-dir --with-pwrfail-dir=/opt/local/etc/apcupsd \
---disable-cgi --disable-apcsmart --disable-dumb --disable-pcnet --disable-modbus --without-cgi-bin \ 
---with-nisip=127.0.0.1 --with-upscable=ether --with-upstype=net
-
+--disable-cgi --without-cgi-bin --disable-apcsmart --disable-dumb --disable-modbus --with-nisip=127.0.0.1 \
+--with-upscable=ether --with-upstype=net
+```
 ## Installation
 Copy repo to global zone with scp or rsync
 ```
