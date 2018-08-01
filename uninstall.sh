@@ -6,9 +6,7 @@ PREFIX=/opt/local
 echo "Removing files..."
 
 rm $SMF_PREFIX/apcupsd.xml
-rm $SMF_PREFIX/smartos-setup.xml
 rm $PREFIX/lib/svc/method/apcupsd.sh
-rm $PREFIX/lib/svc/method/smartos-setup.sh
 rm $PREFIX/sbin/apcupsd
 rm $PREFIX/sbin/apctest
 rm $PREFIX/sbin/apcaccess
