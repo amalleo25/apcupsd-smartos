@@ -25,9 +25,9 @@ Edit apcupsd.conf and change DEVICE to apcupsd master (e.g., DEVICE 192.168.1.1:
 ```
 vi /opt/local/etc/apcupsd/apcupsd.conf
 ```
-Manaully start the service or reboot SmartOS
+Restart apcupsd to reload new config
 ```
-svcadm enable apcupsd
+svcadm restart apcupsd
 ```
 
 Run apcaccess command to test for proper connectivity.
