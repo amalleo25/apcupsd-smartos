@@ -2,7 +2,7 @@
 
 This script will setup apcupsd in the global zone as a network slave.
 
-Tested on SmartOS 20170608T172457Z
+Tested on joyent_20180719T001436Z
 
 At the time of this write up, 3.14.14 is the latest version of apcupsd.
 
