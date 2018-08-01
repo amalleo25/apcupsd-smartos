@@ -18,4 +18,7 @@ rm $PREFIX/man/man8/apccontrol.8
 rm $PREFIX/man/man8/apctest.8
 rm $PREFIX/man/man8/apcupsd.8
 
+svcadm disable apcupsd
+svccfg delete apcupsd
+
 echo "Uninstall complete"
